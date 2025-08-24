@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TickerSense - AI-Powered Stock Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Local Libraries -->
+    <script src="libs/chart.min.js"></script>
+    <script src="libs/papaparse.min.js"></script>
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1>TickerSense <span>📊</span></h1>
+            <p class="tagline">AI-powered stock insights & interactive visualizations</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="upload-section">
+            <h2>Upload CSV File</h2>
+            <div class="upload-container">
+                <input type="file" id="csvFile" accept=".csv" class="file-input">
+                <label for="csvFile" class="file-label">
+                    <span class="file-button">Choose CSV File</span>
+                    <span class="file-name" id="fileName">No file chosen</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <div class="chart-controls">
+                <select id="chartType" class="chart-select">
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="pie">Pie Chart</option>
+                </select>
+                <button id="updateChart" class="btn">Update Chart</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="dataChart"></canvas>
+                <div id="noDataMessage" class="no-data">
+                    <p>Upload a CSV file or search for stock data to see visualizations</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-section">
+            <h2>Stock Analysis</h2>
+            <div class="ai-input-container">
+                <input type="text" id="stockQuery" placeholder="Ask the AI about this stock..." class="ai-input">
+                <button id="askAI" class="btn btn-primary">Ask AI</button>
+            </div>
+            <div id="aiResponse" class="ai-response"></div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>First Project: One must imagine engineers happy!</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
